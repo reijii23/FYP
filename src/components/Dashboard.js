@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Paper } from '@mui/material';
+import { Box, Grid, Paper, Typography } from '@mui/material';
 import Chart from './Chart';
 import KPIBox from './KPIBox';
 
@@ -7,25 +7,30 @@ const Dashboard = () => {
     return (
         <Box sx={{ flexGrow: 1, padding: 2 }}>
             <Grid container spacing={2}>
-                <Grid item xs={12} sm={4}>
-                    <Paper>
-                        <KPIBox title="Conversions" value="229" subtext="past 7 days" />
+                <Grid item xs={12} sm={6} md={4}>
+                    <Paper sx={{ padding: 2 }}>
+                        <KPIBox title="Daily Sales" value="$34,245" subtext="Last 24 Hours" />
                         <Chart />
                     </Paper>
                 </Grid>
-                <Grid item xs={12} sm={4}>
-                    <Paper>
-                        <KPIBox title="Conversion rate" value="0.9%" subtext="7 day average" />
+                <Grid item xs={12} sm={6} md={4}>
+                    <Paper sx={{ padding: 2 }}>
+                        <KPIBox title="Email Subscription" value="49/50 GB" subtext="Last Campaign Performance" />
                         <Chart />
                     </Paper>
                 </Grid>
-                <Grid item xs={12} sm={4}>
-                    <Paper>
-                        <KPIBox title="Sessions" value="26.9K" subtext="past 7 days" />
+                <Grid item xs={12} sm={6} md={4}>
+                    <Paper sx={{ padding: 2 }}>
+                        <KPIBox title="Completed Tasks" value="75" subtext="Last Campaign Performance" />
                         <Chart />
                     </Paper>
                 </Grid>
-                {/* Add more grid items for other KPIs */}
+                <Grid item xs={12}>
+                    <Paper sx={{ padding: 2 }}>
+                        <Typography variant="h6">Employees Stats</Typography>
+                        {/* Add a table or more detailed stats here */}
+                    </Paper>
+                </Grid>
             </Grid>
         </Box>
     );
